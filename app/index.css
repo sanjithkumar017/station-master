@@ -1,0 +1,110 @@
+html {
+    background-color: #FFCF56;
+}
+
+body {
+    margin: 20px;
+    font-family: 'Lato', sans-serif;
+    background-color: #FFCF56;
+
+}
+
+.container {
+    margin: 0 auto;
+
+}
+
+.containerflex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.centerAll {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.testmeup {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between!important;
+    flex-direction: column;
+
+}
+
+.containerflex * {
+    margin-top: 30px;
+}
+
+.ui.input input {
+    text-align: center;
+    font-size: larger;
+    font-weight: 500;
+
+}
+
+.ui.input.focus input {
+    border-color: rgba(0, 0, 0, 0.26);;
+    font-weight: 900;
+}
+
+.ui.input.focus input:focus {
+    border-color: rgba(0, 0, 0, 0.66);
+}
+
+.ui.button {
+    color: #FFCF56;
+    background-color: #F3F8F2;
+    margin: 0;
+}
+
+.ui.button:hover {
+    color: #c3000a;
+}
+
+.visible.content {
+    margin-top: 0;
+}
+
+.ui.secondary.menu {
+
+}
+
+.ui.secondary.menu .item {
+    color: #F3F8F2;
+    font-size: large;
+    font-weight: 600;
+    background-color: transparent;
+
+}
+
+.ui.secondary.menu .active.item {
+    color: white;
+    font-size: xx-large;
+    background-color: transparent;
+    font-weight: 900;
+
+}
+
+.ui.collapsing.table tr td {
+    text-align: center;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 40px;
+    color: #F3F8F2;
+    flex: 0 0 100%;
+}
