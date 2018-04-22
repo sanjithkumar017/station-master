@@ -145,7 +145,7 @@ const parserJson2Xml = (requestJson)=> {
 
     //Execution starts here
     var conditionChildren = [];
-    console.log("Length of Conditions", requestJson.length);
+
     for (const rJson of requestJson) {
 
         var condition = {};
@@ -160,10 +160,10 @@ const parserJson2Xml = (requestJson)=> {
     }
 
     let conditions = {"conditions": {"condition": conditionChildren}}
-    console.log("\n\nThe End \n\n", conditions);
+
     var builder = require('xmlbuilder');
     var feed = builder.create(conditions, {encoding: 'utf-8'})
-    console.log(feed.end({pretty: true}));
+
     return feed
 }
 

@@ -1,24 +1,34 @@
-html {
+html, body {
     background-color: #FFCF56;
+    height: 100%;
 }
 
 body {
     margin: 20px;
     font-family: 'Lato', sans-serif;
     background-color: #FFCF56;
-
 }
 
 .container {
     margin: 0 auto;
+    height: 100%;
+}
 
+#app {
+    height: 100%;
+}
+
+.fixtop {
+    position: fixed;
+    top: 0;
 }
 
 .containerflex {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 .mainCenter {
@@ -26,6 +36,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 100%;
 }
 
 .centerAll {
@@ -39,7 +50,7 @@ body {
 .testmeup {
     display: flex !important;
     align-items: center;
-    justify-content: space-between!important;
+    justify-content: space-between !important;
     flex-direction: column;
 
 }
@@ -64,22 +75,19 @@ body {
     border-color: rgba(0, 0, 0, 0.66);
 }
 
-.ui.button {
+.ui.button.fetchButton {
     color: #FFCF56;
     background-color: #F3F8F2;
     margin: 0;
+    width: 100px;
+    -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+    transition: width 1s;
 }
 
-.ui.button:hover {
-    color: #c3000a;
-}
-
-.visible.content {
-    margin-top: 0;
-}
-
-.ui.secondary.menu {
-
+.ui.button.fetchButton:hover {
+    color: #FFCF56;
+    width: 200px;
+    background-color: #F3F8F2;
 }
 
 .ui.secondary.menu .item {
@@ -87,18 +95,16 @@ body {
     font-size: large;
     font-weight: 600;
     background-color: transparent;
-
 }
 
-.ui.secondary.menu .active.item {
-    color: white;
+.ui.secondary.menu .active.item, .ui.secondary.menu .active.item:hover {
+    color: #D34E24;
     font-size: xx-large;
     background-color: transparent;
     font-weight: 900;
-
 }
 
-.ui.collapsing.table tr td {
+.ui.collapsing.table tr td, .ui.collapsing.table tr th {
     text-align: center;
 }
 
@@ -107,4 +113,84 @@ body {
     font-size: 40px;
     color: #F3F8F2;
     flex: 0 0 100%;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.by {
+    margin-top: 0;
+    text-align: right;
+}
+
+.white.heart.large {
+    font-size: 1.4em;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.white.heart.large:hover {
+    font-size: 1.7em;
+    color: rgba(238, 0, 13, 0.48);
+}
+
+.ui.statistic .text.value, i.arrow.huge, i.red.icon {
+    color: white;
+}
+
+.ui.red.button {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.ui.red.button:hover {
+    font-size: medium;
+    color: #D34E24;;
+    background-color: white;
+}
+
+.ui.statistic .text.value {
+    font-weight: 900;
+}
+
+.ui.statistic .label, p, .ui.collapsing.table tr th {
+
+    color: #5d6365;
+}
+
+b, .ui.collapsing.table tr td, .by {
+    color: #313638;
+}
+
+.pullapart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.highlight {
+    font-size: 350px;
+    font-weight: 900;
+    color: white;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.highlight:hover {
+    font-size: 360px;
+    font-weight: 900;
+    color: white;
+
+}
+
+.highlight-message {
+    color: #5d6365;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.highlight-message:hover {
+    color: #5d6365;
+    font-size: 1.4rem
 }

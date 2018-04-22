@@ -6,7 +6,9 @@ import PropTypes from 'prop-types'
 import SearchComponent from './SearchComponent';
 import ResultComponent from './ResultComponent';
 import MenuComponent from './MenuComponent';
-import fetchPnr from '../utils/api'
+import NotFound from './NotFound';
+import fetchPnr from '../utils/api';
+import firebase from '../utils/firebase'
 import {Dimmer, Loader} from 'semantic-ui-react'
 
 const LOGO_URL = 'https://react.semantic-ui.com/logo.png'
@@ -21,15 +23,31 @@ class PnrSearch extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            pnr: "",
+            pnr: "4554941574",
             loading: false,
             result: false,
-            details: {}
+            details: {},
+            liked: false,
+            found: false,
+            likesCount: 0
         }
+
+        const likesRef = firebase.database().ref('likes');
+        likesRef.on('value', (snapshot) => {
+            console.log("This is the snapshot ", snapshot.val());
+
+            this.setState(() => {
+                return {
+                    likesCount: snapshot.val()["likesCount"]
+                }
+            })
+        });
 
         this.PnrChange = this.PnrChange.bind(this)
         this.handleClick = this.handleClick.bind(this)
         this.parseData = this.parseData.bind(this)
+        this.handleMenuClick = this.handleMenuClick.bind(this)
+        this.handlePnrCancel = this.handlePnrCancel.bind(this)
     }
 
     componentDidMount() {
@@ -37,7 +55,7 @@ class PnrSearch extends React.Component {
     }
 
     handleClick(event, data) {
-        console.log("This is the submit ", RAIL_KEY, RAIL_URL);
+
         //make an API call.
         this.setState(() => {
             return {
@@ -46,16 +64,31 @@ class PnrSearch extends React.Component {
         })
         fetchPnr(this.state.pnr)
             .then((data) => {
-                console.log("Tis is data ", JSON.stringify(data));
+
                 //Call the function to parse the data
+                console.log("Got data ", data);
                 let parsedData = this.parseData(data)
-                this.setState(() => {
-                    return {
-                        loading: false,
-                        result: true,
-                        details: parsedData
-                    }
-                })
+                if (!parsedData.FROM_STN_CODE && !parsedData.TO_STN_CODE) {
+                    this.setState(() => {
+                        return {
+                            loading: false,
+                            result: true,
+                            details: parsedData,
+                            found: false
+                        }
+                    })
+
+                } else {
+                    this.setState(() => {
+                        return {
+                            loading: false,
+                            result: true,
+                            details: parsedData,
+                            found: true
+                        }
+                    })
+                }
+
             })
 
 
@@ -85,18 +118,42 @@ class PnrSearch extends React.Component {
 
         parsedData["PASSENGERS"] = passengersList;
 
-        console.log("This is the parseData ", JSON.stringify(parsedData));
+
         return parsedData
     }
 
     PnrChange(event, data) {
-        console.log("This is the update ", data.value);
+
         //It is a string. If it exceeds length 9 we can trigger a hit.
         this.setState(() => {
-
             return {pnr: data.value}
+        })
 
+    }
 
+    handleMenuClick() {
+        const likesRef = firebase.database().ref('likes');
+        console.log("We here ");
+        likesRef.update({likesCount: (this.state.likesCount + 1)})
+            .then(() => {
+                console.log("Was it done?");
+            })
+
+        this.setState(() => {
+            return {
+                liked: true
+            }
+        })
+
+    }
+
+    handlePnrCancel() {
+
+        this.setState(() => {
+            return {
+                loading: false,
+                result: false
+            }
         })
 
     }
@@ -109,9 +166,12 @@ class PnrSearch extends React.Component {
                 <Dimmer active={this.state.loading}>
                     <Loader>Loading</Loader>
                 </Dimmer>
-                <MenuComponent/>
+                <MenuComponent handleItemClick={this.handleMenuClick} liked={this.state.liked}
+                               likesCount={this.state.likesCount}/>
 
-                {this.state.result ? <ResultComponent details={this.state.details}/> :
+                {this.state.result ? (this.state.found ?
+                    <ResultComponent details={this.state.details} handlePnrCancel={this.handlePnrCancel}/> :
+                    <NotFound handlePnrCancel={this.handlePnrCancel}/>) :
                     <SearchComponent logo={LOGO_URL} placeHolderText={PLACEHOLDER_TEXT} onPnrChange={this.PnrChange}
                                      pnrValue={this.state.pnr}
                                      onhandleClick={this.handleClick}/>}
@@ -125,7 +185,9 @@ export default PnrSearch;
 
 
 //TODO
-//Put the code on Github.
+
+//Handle all Travel classes
 //We need to support mobile view too.
+//Some kind of transition on the heart.
 //Put a like button and link it to firebase.
 //Layout
