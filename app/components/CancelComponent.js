@@ -1,6 +1,8 @@
 import React from 'react';
 import {Button} from 'semantic-ui-react'
 
+import PropTypes from 'prop-types'
+
 
 const CancelComponent = ({handlePnrCancel}) => (
     <
@@ -12,5 +14,7 @@ const CancelComponent = ({handlePnrCancel}) => (
     />
 )
 
-
+CancelComponent.propTypes = {
+    handlePnrCancel: PropTypes.func
+}
 export default CancelComponent;

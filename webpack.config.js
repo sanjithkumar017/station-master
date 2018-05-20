@@ -3,7 +3,7 @@ var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var webpack = require('webpack')
 
-module.exports = {
+let config = {
     entry: "./app/index.js",
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -27,6 +27,20 @@ module.exports = {
         historyApiFallback: true
     }
 
+
 }
 
+if (process.env.NODE_ENV === 'production') {
+    config.plugins.push(
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify("production"),
+                'RAIL_KEY': JSON.stringify(process.env.RAIL_KEY),
+                'RAIL_URL': JSON.stringify(process.env.RAIL_URL),
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin()
+    )
+}
 
+module.exports = config

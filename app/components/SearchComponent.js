@@ -1,8 +1,9 @@
 import React from 'react';
-import Logo from './Logo';
 import NumberInput from './NumberInput';
 import FetchButton from './FetchButton';
 import getRandom from '../utils/getRandomNumbers'
+
+import PropTypes from 'prop-types'
 
 const QUOTES = [{quote: "JOBS FILL YOUR POCKET, BUT ADVENTURES FILL YOUR SOUL.", by: "Jaime Lyn Beatty"},
     {quote: "ONCE A YEAR GO SOMEPLACE YOU'VE NEVER BEEN BEFORE.", by: "Dalai Lama XIV"},
@@ -18,7 +19,7 @@ const QUOTES = [{quote: "JOBS FILL YOUR POCKET, BUT ADVENTURES FILL YOUR SOUL.",
     }]
 const index = getRandom(0, QUOTES.length)
 
-const SearchComponent = ({logo, placeHolderText, onPnrChange, pnrValue, onhandleClick}) => (
+const SearchComponent = ({placeHolderText, onPnrChange, pnrValue, onhandleClick}) => (
     <div className={"testmeup"}>
         <div>
             <h1 className={"title"}>{QUOTES[index]["quote"]}</h1>
@@ -34,5 +35,12 @@ const SearchComponent = ({logo, placeHolderText, onPnrChange, pnrValue, onhandle
     </div>
 
 )
+
+SearchComponent.propTypes = {
+    placeHolderText: PropTypes.string,
+    onPnrChange: PropTypes.func,
+    pnrValue: PropTypes.string,
+    onhandleClick: PropTypes.func
+}
 
 export default SearchComponent;

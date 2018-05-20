@@ -1,5 +1,7 @@
 import React from 'react';
-import {Menu, Icon, Statistic} from 'semantic-ui-react'
+import {Menu, Icon} from 'semantic-ui-react'
+
+import PropTypes from 'prop-types'
 
 const MenuComponent = ({handleItemClick, liked, likesCount}) => (
     <Menu secondary fluid={true} className={"fixtop"}>
@@ -14,5 +16,11 @@ const MenuComponent = ({handleItemClick, liked, likesCount}) => (
     </Menu>
 
 )
+
+MenuComponent.propTypes = {
+    handleItemClick: PropTypes.func,
+    liked: PropTypes.bool,
+    likesCount: PropTypes.number
+}
 
 export default MenuComponent;

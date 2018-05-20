@@ -2,7 +2,7 @@
  * Created by sanjithkumar017 on 15/2/18.
  */
 import React from 'react';
-import PropTypes from 'prop-types'
+
 import SearchComponent from './SearchComponent';
 import ResultComponent from './ResultComponent';
 import MenuComponent from './MenuComponent';
@@ -15,7 +15,9 @@ const LOGO_URL = 'https://react.semantic-ui.com/logo.png'
 const PLACEHOLDER_TEXT = 'Please enter the PNR'
 
 const JOURNEY_CLASS_MAPPER = {
-    "SL": "SLEEPER"
+    "SL": "SLEEPER",
+    "2A": "2 TIER AC",
+    "3A": "3 TIER AC",
 }
 
 
@@ -23,7 +25,7 @@ class PnrSearch extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            pnr: "4554941574",
+            pnr: "2446473018",
             loading: false,
             result: false,
             details: {},
@@ -31,17 +33,8 @@ class PnrSearch extends React.Component {
             found: false,
             likesCount: 0
         }
+        this.likesRef = firebase.database().ref('likes');
 
-        const likesRef = firebase.database().ref('likes');
-        likesRef.on('value', (snapshot) => {
-            console.log("This is the snapshot ", snapshot.val());
-
-            this.setState(() => {
-                return {
-                    likesCount: snapshot.val()["likesCount"]
-                }
-            })
-        });
 
         this.PnrChange = this.PnrChange.bind(this)
         this.handleClick = this.handleClick.bind(this)
@@ -52,6 +45,15 @@ class PnrSearch extends React.Component {
 
     componentDidMount() {
 
+        this.likesRef.on('value', (snapshot) => {
+            console.log("This is the snapshot ", snapshot.val());
+
+            this.setState(() => {
+                return {
+                    likesCount: snapshot.val()["likesCount"]
+                }
+            })
+        });
     }
 
     handleClick(event, data) {
@@ -98,9 +100,9 @@ class PnrSearch extends React.Component {
 
         const parsedData = {}
         parsedData["FROM_STN_CODE"] = data.from_station.code;
-        parsedData["FROM_STN_NAME"] = data.from_station.name;
+        parsedData["FROM_STN_NAME"] = data.boarding_point.name;
         parsedData["TO_STN_CODE"] = data.to_station.code;
-        parsedData["TO_STN_NAME"] = data.to_station.name;
+        parsedData["TO_STN_NAME"] = data.reservation_upto.name;
 
         parsedData["CHART"] = data.chart_prepared ? "PREPARED" : "NOT PREPARED";
         parsedData["TRAVEL_CLASS"] = JOURNEY_CLASS_MAPPER[data.journey_class.code];
@@ -133,7 +135,7 @@ class PnrSearch extends React.Component {
 
     handleMenuClick() {
         const likesRef = firebase.database().ref('likes');
-        console.log("We here ");
+
         likesRef.update({likesCount: (this.state.likesCount + 1)})
             .then(() => {
                 console.log("Was it done?");
@@ -153,6 +155,14 @@ class PnrSearch extends React.Component {
             return {
                 loading: false,
                 result: false
+            }
+        })
+
+
+        this.setState(() => {
+            return {
+                bgcolor: "black"
+                , color: "yellow"
             }
         })
 
@@ -186,8 +196,10 @@ export default PnrSearch;
 
 //TODO
 
+//Can we further optimise displaying from-to and boarding-reservation-upto
+//Faster GET likes
+//Does'nt look good on moz
+//Make it take only 1 like
 //Handle all Travel classes
 //We need to support mobile view too.
-//Some kind of transition on the heart.
-//Put a like button and link it to firebase.
 //Layout

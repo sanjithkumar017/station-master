@@ -2,6 +2,8 @@ import React from 'react';
 import {Grid, Statistic, Table, Icon, Button} from 'semantic-ui-react'
 import CancelComponent from './CancelComponent'
 
+import PropTypes from 'prop-types'
+
 const ResultComponent = ({details, handlePnrCancel}) => (
     <div className={"pullapart"}>
         <div className={"mainCenter"}>
@@ -85,5 +87,10 @@ const ResultComponent = ({details, handlePnrCancel}) => (
 
 
 )
+
+ResultComponent.propTypes = {
+    details: PropTypes.object,
+    handlePnrCancel: PropTypes.func
+}
 
 export default ResultComponent;
