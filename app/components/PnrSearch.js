@@ -50,6 +50,7 @@ class PnrSearch extends React.Component {
 
             this.setState(() => {
                 return {
+                    // likesCount: snapshot.val()
                     likesCount: snapshot.val()["likesCount"]
                 }
             })

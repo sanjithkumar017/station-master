@@ -1,12 +1,12 @@
 import firebase from 'firebase';
 
 var config = {
-    apiKey: "AIzaSyCV_PzfLmpIvf5WFpWWC8GQ1POGjXdeYxs",
-    authDomain: "station-master.firebaseapp.com",
-    databaseURL: "https://station-master.firebaseio.com",
-    projectId: "station-master",
+    apiKey: "AIzaSyCnHkmRSEAREU88sKnpHDMKfhOSCssPBjE",
+    authDomain: "station-master-15a28.firebaseapp.com",
+    databaseURL: "https://station-master-15a28.firebaseio.com",
+    projectId: "station-master-15a28",
     storageBucket: "",
-    messagingSenderId: "201830164637"
+    messagingSenderId: "477934840268"
 };
 firebase.initializeApp(config);
 

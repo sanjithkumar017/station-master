@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28c9397c-8a55-4e61-b8c1-a24d98d57994" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.firebaserc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/CancelComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/CancelComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/FetchButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/FetchButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Logo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/MenuComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/MenuComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/NumberInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NumberInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/PnrSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/PnrSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ResultComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ResultComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/SearchComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/SearchComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/xmlBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/xmlBuilder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase.json" beforeDir="false" />
     </list>
     <ignored path="Github-Battle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PnrSearch.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PnrSearch.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/components/PnrSearch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="47" column="31" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="31" />
+            <state relative-caret-position="321">
+              <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
               <folding>
                 <element signature="e#50#76#0" expanded="true" />
               </folding>
@@ -74,13 +64,13 @@
       <file leaf-file-name="firebase.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/utils/firebase.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="30" selection-start-column="30" selection-end-column="30" />
+            <state relative-caret-position="135">
+              <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -94,18 +84,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuComponent.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/MenuComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="34" selection-start-line="3" selection-end-line="3" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -186,6 +164,7 @@
       <find>circula</find>
       <find>code</find>
       <find>Tier</find>
+      <find>update</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;.centerAll</replace>
@@ -217,7 +196,6 @@
         <option value="$PROJECT_DIR$/app/utils/getRandomNumbers.js" />
         <option value="$PROJECT_DIR$/app/index.css" />
         <option value="$PROJECT_DIR$/app/components/firebase.js" />
-        <option value="$PROJECT_DIR$/app/utils/firebase.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/components/CancelComponent.js" />
         <option value="$PROJECT_DIR$/app/components/FetchButton.js" />
@@ -226,9 +204,10 @@
         <option value="$PROJECT_DIR$/app/components/NumberInput.js" />
         <option value="$PROJECT_DIR$/app/components/ResultComponent.js" />
         <option value="$PROJECT_DIR$/app/components/SearchComponent.js" />
-        <option value="$PROJECT_DIR$/app/components/PnrSearch.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/app/utils/firebase.js" />
+        <option value="$PROJECT_DIR$/app/components/PnrSearch.js" />
       </list>
     </option>
   </component>
@@ -433,12 +412,12 @@
       <workItem from="1524295170771" duration="40150000" />
       <workItem from="1525076245064" duration="3085000" />
       <workItem from="1525853654543" duration="364000" />
-      <workItem from="1526803197208" duration="8370000" />
+      <workItem from="1526803197208" duration="11005000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215842000" />
+    <option name="totallyTimeSpent" value="218477000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,6 +430,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26760563" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32917318" />
@@ -459,9 +439,9 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32761312" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.17940718" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17940718" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32761312" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32761312" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -508,16 +488,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="64" selection-start-line="18" selection-start-column="20" selection-end-line="19" selection-end-column="64" />
-          <folding>
-            <element signature="e#50#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Nav.js" />
     <entry file="file://$PROJECT_DIR$/app/components/PnrSearch.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -805,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/utils/firebase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/utils/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -839,16 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/PnrSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="47" column="31" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="31" />
-          <folding>
-            <element signature="e#50#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -860,6 +813,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebase.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/utils/firebase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/PnrSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+          <folding>
+            <element signature="e#50#76#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
